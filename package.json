@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "rm -rf dist && webpack --display-error-details --display-modules && npm run copy:dist",
-    "copy:dist": "cp ./src/popup.html manifest.json ./dist"
+    "copy:dist": "cp ./static/icon48.png ./static/icon128.png ./static/full_logo.png ./src/popup.html manifest.json ./dist"
   },
   "author": "Yap Ni",
   "license": "ISC",
