@@ -29,7 +29,7 @@ chrome.runtime.onInstalled.addListener(function() {
 /* Listen for changes in URL */
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     // Check if user is in a Youtube watch page
-    let youtube_watch_reg = /https:\/\/www.youtube\.com\/watch\?v=[a-z0-9]+$/i;
+    let youtube_watch_reg = /https:\/\/www.youtube\.com\/watch\?v=.+$/;
     if (changeInfo.url && changeInfo.url.match(youtube_watch_reg)) {
         // Clear storage first so user don't get outdated links
         chrome.storage.sync.remove(["applemusic_link", "deezer_link", "spotify_link"]);
