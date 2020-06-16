@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/button';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-chrome.storage.sync.get(["spotify_link", "applemusic_link"], function(result) {
+chrome.storage.sync.get(["spotify_link", "applemusic_link", "deezer_link"], function(result) {
     // Spotify
     if (typeof result.spotify_link != "undefined") {
         $("#spotify_btn").attr("disabled", false);
@@ -23,7 +23,7 @@ chrome.storage.sync.get(["spotify_link", "applemusic_link"], function(result) {
     // Deezer
     if (typeof result.deezer_link != "undefined") {
         $("#deezer_btn").attr("disabled", false);
-        $("deezer_btn").on("click", function() {
+        $("#deezer_btn").on("click", function() {
             window.open(result.deezer_link);
         });
     }

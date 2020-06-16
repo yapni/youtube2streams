@@ -1,4 +1,5 @@
 const appleMusic = require('./streams/applemusic');
+const deezer = require('./streams/deezer');
 const spotify = require('./streams/spotify');
 const youtube = require('./streams/youtube');
 
@@ -44,6 +45,11 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             // Apple Music
             appleMusic.getLink(title).then(applemusic_link => {
                 chrome.storage.sync.set({applemusic_link: applemusic_link});
+            });
+
+            // Deezer
+            deezer.getLink(title).then(deezer_link => {
+                chrome.storage.sync.set({deezer_link: deezer_link});
             });
 
             // Spotify
