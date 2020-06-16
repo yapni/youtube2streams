@@ -18,13 +18,5 @@
     "background": {
         "scripts": ["background.bundle.js"],
         "persistent": true
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://www.youtube.com/*"
-            ],
-            "js": ["content.bundle.js"]
-        }
-    ]
+    }
 }
