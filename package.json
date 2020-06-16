@@ -1,0 +1,26 @@
+{
+  "name": "youtube2streams",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist && webpack --display-error-details --display-modules && npm run copy:dist",
+    "copy:dist": "cp ./src/popup.html manifest.json ./dist"
+  },
+  "author": "Yap Ni",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "exports-loader": "^1.0.0",
+    "file-loader": "^6.0.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}

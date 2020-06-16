@@ -1,0 +1,30 @@
+{
+    "name": "Youtube2Streams",
+    "version": "0.1",
+    "description": "Fetches you links to popular streaming platforms for the song you are listening on Youtube",
+    "manifest_version": 2,
+    "permissions": [
+        "declarativeContent", 
+        "tabs", 
+        "storage",
+        "https://api.spotify.com/*",
+        "https://accounts.spotify.com/api/token",
+        "https://itunes.apple.com/search",
+        "https://api.deezer.com/search/track"
+    ],
+    "page_action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": ["background.bundle.js"],
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.youtube.com/*"
+            ],
+            "js": ["content.bundle.js"]
+        }
+    ]
+}
